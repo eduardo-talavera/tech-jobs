@@ -1,4 +1,4 @@
-<p align="center"><img src="/img/legos.jpg"></p>
+<p align="center"><img src="https://github.com/Kuteji/jobs/blob/master/public/img/legos.jpg"></p>
 
 # Portal de Empleos 
 
