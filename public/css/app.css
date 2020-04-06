@@ -78,6 +78,7 @@ h3 {
 .editar-btn {
     flex: 0 0 auto;
     text-align: center;
+    display: inline-block;
 }
 
 /** Header **/

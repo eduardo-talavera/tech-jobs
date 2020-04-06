@@ -4,22 +4,32 @@
   "description": "Portal jobs Con Node js,  Handlebars , Mongo DB y Mongoose",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index"
+    "dev": "nodemon ./index",
+    "start": "concurrently \"npm run dev\" \"npm run watch\" ",
+    "watch": "webpack --w --mode development"
   },
   "author": "Edgar Eduardo Talavera Contreras",
   "license": "ISC",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "concurrently": "^5.1.0",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.2",
     "express-session": "^1.17.0",
+    "handlebars": "^4.7.6",
     "mongoose": "^5.9.7",
     "shortid": "^2.2.15",
     "slug": "^2.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
