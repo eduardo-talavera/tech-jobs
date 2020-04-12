@@ -36,9 +36,17 @@
     </header>
 
     <div class="contenido-principal contenedor">
+
+        {{#if mensajes}}
+            <div class="alertas">
+                {{#mostrarAlertas mensajes}}
+                {{/mostrarAlertas}}
+            </div>
+        {{/if}}
         {{{body}}}
     </div>
     <script src="/dist/bundle.js"></script>
     <script src="/js/trix.js"></script>
+    <script src="https://kit.fontawesome.com/dad2dd254f.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -516,3 +516,29 @@ p.candidatos {
     color: white;
     font-size: 1.8rem;
 }
+
+.auth-sociales {
+    justify-content: center;
+}
+
+.auth-sociales a{
+    margin: 16px;
+}
+
+.auth-sociales i {
+    font-size: 30px;
+}
+
+.btn-more-info i{
+    margin-left: 10px;
+    transition: .15s ease-in-out;
+}
+
+.btn-more-info:hover i{
+    transform: translateX(10px);
+    transition: .5s ease-in-out;
+}
+
+
+
+

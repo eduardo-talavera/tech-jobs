@@ -15,8 +15,10 @@
                     <p class="etiqueta">Contrato</p>
                     <p class="nombre contrato">{{vacante.contrato}}</p>
                 </div>
-                <div class="caja centrar-vertical">
-                    <a href="/vacantes/{{vacante.url}}" class="btn btn-verde">Mas Info</a>
+                <div class="caja centrar-vertical btn-more-info">
+                    <a href="/vacantes/{{vacante.url}}" class="btn btn-verde">Mas Info
+                    <i class="fas fa-angle-double-right"></i>
+                    </a>
                 </div>
             </div> <!--vacante-->
         {{/each}}

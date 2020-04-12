@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/homecontroller');
 const vacantesController = require('../controllers/vacantesController');
-
+const usuariosController = require('../controllers/usuariosController');
+const authController = require('../controllers/authController');
 
 module.exports = () => {
     router.get('/', homeController.mostrarTrabajos );
@@ -16,6 +17,21 @@ module.exports = () => {
    
     // Edita una vacante
     router.get('/vacantes/editar/:url', vacantesController.formEditarVacante);
+    router.post('/vacantes/editar/:url', vacantesController.editarVacante);
+
+   // Crear Cuentas
+   router.get('/crear-cuenta', usuariosController.formCrearCuenta);
+   router.post('/crear-cuenta',
+     usuariosController.validarRegistro,
+     usuariosController.crearUsuario
+   );
+
+   // Autenticar usuarios
+   router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
+   router.post('/iniciar-sesion', authController.autenticarUsuario);
+   
+   // Panel de administracion 
+   router.get('/administracion', authController.mostrarPanel);
    
     return router;
 }
