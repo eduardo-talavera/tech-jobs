@@ -70,4 +70,6 @@ app.use((req, res, next) => {
 app.use('/', router());
 
 
-app.listen(process.env.PUERTO);
+app.listen(process.env.PUERTO, () => {
+    console.log(`El servidor esta corriendo en e puerto ${process.env.PUERTO}`);
+});
