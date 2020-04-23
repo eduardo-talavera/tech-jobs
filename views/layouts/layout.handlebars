@@ -25,6 +25,13 @@
         {{#if cerrarSesion}}
             <div class="cerrar-sesion">
                 <p>Hola! {{nombre}}</p>
+                {{#if imagen}}
+                <div class="img-box" 
+                    style="
+                        background-image:url(/uploads/perfiles/{{imagen}});
+                      ">
+                    </div>
+                {{/if}}
                 <a href="/administracion">Administración</a>
                 <a href="/cerrar-sesion">Cerrar Sesión</a>
             </div>

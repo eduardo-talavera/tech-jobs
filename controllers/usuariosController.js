@@ -9,14 +9,19 @@ exports.subirImagen = (req, res, next) => {
 
         if (error) {
             if (error instanceof multer.MulterError) {
-                return next();
+                if (error.code === 'LIMIT_FILE_SIZE') {
+                    req.flash('error', 'El archivo es muy grande: el maximo son 100kb');
+                } else {
+                    req.flash('error', error.message);
+                }
+
             } else {
                 req.flash('error', error.message);
             }  
             res.redirect('/administracion');
             return;
         }else {
-            return next;
+            return next();
         }
     });
 }
@@ -24,6 +29,7 @@ exports.subirImagen = (req, res, next) => {
 
 // opciones de multer
 const configuracionMulter = {
+    limits : {fileSize : 200000},
     storage: filestorage = multer.diskStorage({
         destination : (req, file, cb) => {
             cb(null, __dirname+'../../public/uploads/perfiles');
@@ -40,8 +46,7 @@ const configuracionMulter = {
         } else {
             cb(new Error('Formato no Valido'), false);
         }
-    },
-    limits : {fileSize : 100000}
+    }
 };
 
 const upload = multer(configuracionMulter).single('imagen');
@@ -119,7 +124,8 @@ exports.formEditarPerfil = (req, res) => {
         nombrePagina: 'Editar Perfil',
         usuario: req.user,
         cerrarSesion: true,
-        nombre: req.user.nombre
+        nombre: req.user.nombre,
+        imagen: req.user.imagen
     })
 }
 
@@ -132,8 +138,8 @@ exports.editarPerfil = async (req, res) => {
     if (req.body.password) {
         usuario.password = req.body.password;
     }
-
-   
+    console.log('editando ...');
+    console.log(req.file);
     if (req.file) {
         usuario.imagen = req.file.filename;
     }
@@ -169,6 +175,7 @@ exports.validarPeril = (req, res, next) => {
             usuario: req.user,
             cerrarSesion: true,
             nombre: req.user.nombre,
+            imagen: req.user.imagen,
             mensajes: req.flash()
         })
     }
