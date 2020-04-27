@@ -14,7 +14,7 @@ exports.formularioNuevaVacante = (req, res) => {
 }
 
 // Agrega las vacantes a la base de datos
-exports.agregarVacante = async (req, res) => {
+exports.agregarVacante = async(req, res) => {
     const vacante = new Vacante(req.body);
 
     // Usuario autor de la vacante
@@ -30,11 +30,12 @@ exports.agregarVacante = async (req, res) => {
     res.redirect(`/vacantes/${nuevaVacante.url}`);
 }
 
-exports.mostrarVacante = async (req, res, next) => {
-    const vacante = await Vacante.findOne({url: req.params.url });
+exports.mostrarVacante = async(req, res, next) => {
+    const vacante = await Vacante.findOne({ url: req.params.url }).populate('autor');
 
+    console.log(vacante);
     // si no hay resultados
-    if(!vacante) return next();
+    if (!vacante) return next();
 
     res.render('vacante', {
         vacante,
@@ -43,10 +44,10 @@ exports.mostrarVacante = async (req, res, next) => {
     })
 }
 
-exports.formEditarVacante = async (req, res, next) => {
-    const vacante = await Vacante.findOne({url: req.params.url});
+exports.formEditarVacante = async(req, res, next) => {
+    const vacante = await Vacante.findOne({ url: req.params.url });
 
-    if(!vacante) return next();
+    if (!vacante) return next();
 
     res.render('editar-vacante', {
         vacante,
@@ -57,18 +58,18 @@ exports.formEditarVacante = async (req, res, next) => {
     })
 }
 
-exports.editarVacante = async (req, res) => {
+exports.editarVacante = async(req, res) => {
     const vacanteActualizada = req.body;
 
     vacanteActualizada.skills = req.body.skills.split(',');
 
-    const vacante = await Vacante.findOneAndUpdate({url: req.params.url},
+    const vacante = await Vacante.findOneAndUpdate({ url: req.params.url },
         vacanteActualizada, {
             new: true,
             runValidators: true
-        } );
+        });
 
-        res.redirect(`/vacantes/${vacante.url}`);
+    res.redirect(`/vacantes/${vacante.url}`);
 }
 
 
@@ -106,17 +107,17 @@ exports.validarVacante = (req, res, next) => {
     next(); // siguiente middleware
 }
 
-exports.eliminarVacante = async (req, res) => {
+exports.eliminarVacante = async(req, res) => {
     const { id } = await req.params;
 
     const vacante = await Vacante.findById(id);
 
-    if(verificarAutor(vacante, req.user)){
+    if (verificarAutor(vacante, req.user)) {
         // el usuario actual  es el autor la vacante, puede eliminar
         vacante.remove();
         res.status(200).send('Vacante Eliminada Correctamente');
 
-    }else{
+    } else {
         // el usuario actual no es el autor de la vacante no puede borrar o editar 
         res.status(403).send('Error');
     }
@@ -125,7 +126,7 @@ exports.eliminarVacante = async (req, res) => {
 
 const verificarAutor = (vacante = {}, usuario = {}) => {
     if (!vacante.autor.equals(usuario._id)) {
-         return false;
+        return false;
     }
     return true;
 }
