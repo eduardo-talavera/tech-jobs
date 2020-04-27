@@ -10,9 +10,29 @@ html {
 }
 
 body {
-    background-color: #100E17;
+    background-image: url('../img/soldiers-starwars.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
     font-family: 'Rubik', sans-serif;
     font-size: 1.6rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.capa {
+    background-image: linear-gradient(to top left, #100E17 20%, rgba(17, 14, 41, 0.9));
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+main.contenedor {
+    background-color: #100E17;
+    opacity: .96;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 p {
@@ -125,6 +145,7 @@ h3 {
 .nombre-sitio {
     display: flex;
     justify-content: space-between;
+    padding-top: 20px;
 }
 
 .nombre-sitio a {
@@ -650,3 +671,14 @@ p.candidatos {
     width: 100px;
     height: 100px;
 }
+
+
+/* cambiando estilo aparrafos  */
+
+
+/* p.puesto,
+p.etiqueta {
+    background-color: black;
+    display: inline-block;
+    padding: 5px 20px;
+} */

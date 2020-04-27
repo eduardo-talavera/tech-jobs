@@ -9,59 +9,62 @@
     <title>{{ nombrePagina }}</title>
 </head>
 <body>
-    
-    <div class="nombre-sitio contenedor">
-        <h1><a href="/">Jobs</a></h1>
 
-        {{#if barra}}
-            <div class="buscador">
-                <form action="#">
-                    <input type="text" class="buscar">
-                    <input type="submit" value="Buscar">
-                </form>
-            </div>
-        {{/if}}
+   <div class="capa">
+        <div class="nombre-sitio contenedor">
+            <h1><a href="/">Jobs</a></h1>
 
-        {{#if cerrarSesion}}
-            <div class="cerrar-sesion">
-                <p>Hola! {{nombre}}</p>
-                {{#if imagen}}
-                <div class="img-box" 
-                    style="
-                        background-image:url(/uploads/perfiles/{{imagen}});
-                      ">
-                    </div>
-                {{/if}}
-                <a href="/administracion">Administración</a>
-                <a href="/cerrar-sesion">Cerrar Sesión</a>
-            </div>
-        {{/if}}
-    </div>
+            {{#if barra}}
+                <div class="buscador">
+                    <form action="#">
+                        <input type="text" class="buscar">
+                        <input type="submit" value="Buscar">
+                    </form>
+                </div>
+            {{/if}}
 
-    <header class="site-header contenedor separador">
-        <h2>{{nombrePagina}}</h2>
+            {{#if cerrarSesion}}
+                <div class="cerrar-sesion">
+                    <p>Hola! {{nombre}}</p>
+                    {{#if imagen}}
+                    <div class="img-box" 
+                        style="
+                            background-image:url(/uploads/perfiles/{{imagen}});
+                        ">
+                        </div>
+                    {{/if}}
+                    <a href="/administracion">Administración</a>
+                    <a href="/cerrar-sesion">Cerrar Sesión</a>
+                </div>
+            {{/if}}
+        </div>
 
-        {{#if tagline}}
-            <p class="tagline">{{tagline}}</p>
-        {{/if}}
+        <header class="site-header contenedor separador">
+            <h2>{{nombrePagina}}</h2>
 
-        {{#if boton}}
-            <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
-        {{/if}}
-    </header>
+            {{#if tagline}}
+                <p class="tagline">{{tagline}}</p>
+            {{/if}}
 
-    <div class="contenido-principal contenedor">
+            {{#if boton}}
+                <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
+            {{/if}}
+        </header>
 
-        {{#if mensajes}}
-            <div class="alertas">
-                {{#mostrarAlertas mensajes}}
-                {{/mostrarAlertas}}
-            </div>
-        {{/if}}
-        {{{body}}}
-    </div>
+        <div class="contenido-principal contenedor">
+
+            {{#if mensajes}}
+                <div class="alertas">
+                    {{#mostrarAlertas mensajes}}
+                    {{/mostrarAlertas}}
+                </div>
+            {{/if}}
+            {{{body}}}
+        </div>
+    </div> 
     <script src="/dist/bundle.js"></script>
     <script src="/js/trix.js"></script>
     <script src="https://kit.fontawesome.com/dad2dd254f.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
