@@ -1,9 +1,25 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+const nave = document.querySelector('.img-header');
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
+    window.onscroll = function() {
+        // Obtenemos la posicion del scroll en pantalla
+        let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+        // Realizamos alguna accion cuando el scroll este entre la posicion 300 y 400
+        if (scroll > 0) {
+            if (nave) {
+                nave.classList.add('animated-nave');
+            }
+        }
+    }
+
     const skills = document.querySelector('.lista-conocimientos');
 
     // Limpiar las alertas
@@ -24,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const vacantesListado = document.querySelector('.panel-administracion');
 
     if (vacantesListado) {
-            vacantesListado.addEventListener('click', accionesListado);
+        vacantesListado.addEventListener('click', accionesListado);
     }
 });
 
@@ -35,7 +51,7 @@ const agregarSkills = e => {
             // Quitarlo del set y quitar la clase
             skills.delete(e.target.textContent);
             e.target.classList.remove('activo');
-        }else{
+        } else {
             // Agregarlo al set y agregar la clase
             skills.add(e.target.textContent);
             e.target.classList.add('activo');
@@ -63,11 +79,11 @@ const limpiarAlertas = () => {
     const interval = setInterval(() => {
         if (alertas.children.length > 0) {
             alertas.removeChild(alertas.children[0]);
-        } else if( alertas.children.length === 0 ) {
+        } else if (alertas.children.length === 0) {
             alertas.parentElement.removeChild(alertas);
             clearInterval(interval);
         }
-    },2000);
+    }, 2000);
 }
 
 // Eliminar Vacantes
@@ -85,21 +101,21 @@ const accionesListado = e => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si eliminar!',
             cancelButtonText: 'No, Cancelar'
-          }).then((result) => {
+        }).then((result) => {
             if (result.value) {
 
 
                 // Enviar peticion con axios
                 const url = `${location.origin}/vacantes/eliminar/${e.target.dataset.eliminar}`;
-                
+
                 // enviar peticion axios para eliminar la vacante 
-                axios.delete(url, { params: {url} })
+                axios.delete(url, { params: { url } })
                     .then(res => {
-                        if (res.status === 200 ) {
+                        if (res.status === 200) {
                             // console.log(res);
                             Swal.fire(
                                 'Eliminada!',
-                                 res.data,
+                                res.data,
                                 'success'
                             );
                             // TODO: Eliminar del DOM
@@ -113,11 +129,11 @@ const accionesListado = e => {
                             icon: 'error',
                             title: 'Ha ocurrido un error',
                             text: 'Eliminacion Fallida!',
-                          })
+                        })
                     });
             }
-          })
-    }else if(e.target.tagName === 'A') {
+        })
+    } else if (e.target.tagName === 'A') {
         window.location.href = e.target.href;
     }
 }

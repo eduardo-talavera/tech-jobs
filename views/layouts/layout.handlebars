@@ -40,15 +40,21 @@
         </div>
 
         <header class="site-header contenedor separador">
-            <h2>{{nombrePagina}}</h2>
+                <div class="text-header">
+                    <h2>{{nombrePagina}}</h2>
 
-            {{#if tagline}}
-                <p class="tagline">{{tagline}}</p>
-            {{/if}}
+                    {{#if tagline}}
+                        <p class="tagline">{{tagline}}</p>
+                    {{/if}}
 
-            {{#if boton}}
-                <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
-            {{/if}}
+                    {{#if boton}}
+                        <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
+                    {{/if}}
+                </div>
+           
+           {{#if nave}}
+                <img src="/img/rocket.png" class="img-header">
+           {{/if}}
         </header>
 
         <div class="contenido-principal contenedor">

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-image: url('../img/soldiers-starwars.jpg');
+    background-image: url('../img/universe.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -135,11 +135,50 @@ h3 {
 
 .site-header {
     min-height: 400px;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+
+.site-header .text-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 5rem;
+}
+
+.site-header .img-header {
+    width: 300px;
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+
+/* .site-header .img-header:hover {
+    transition: .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    transform-origin: left center;
+    transform: rotate(-75deg) scale(.7);
+} */
+
+.animated-nave {
+    animation-name: animate-nave;
+    animation-duration: 1s;
+    transform-origin: left center;
+    /* transition: .1s cubic-bezier(0.6, -0.28, 0.735, 0.045); */
+    transform: rotate(-80deg) translate(150px, -150px) scale(.5);
+}
+
+@keyframes animate-nave {
+    0% {
+        transform: initial;
+    }
+    50% {
+        transform: rotate(-75deg) scale(.7);
+    }
+    100% {
+        transform: rotate(-80deg) translate(150px, -150px) scale(.5);
+    }
 }
 
 .nombre-sitio {
@@ -671,14 +710,3 @@ p.candidatos {
     width: 100px;
     height: 100px;
 }
-
-
-/* cambiando estilo aparrafos  */
-
-
-/* p.puesto,
-p.etiqueta {
-    background-color: black;
-    display: inline-block;
-    padding: 5px 20px;
-} */
