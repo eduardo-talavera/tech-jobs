@@ -36,7 +36,6 @@ exports.agregarVacante = async(req, res) => {
 exports.mostrarVacante = async(req, res, next) => {
     const vacante = await Vacante.findOne({ url: req.params.url }).populate('autor');
 
-    console.log(vacante);
     // si no hay resultados
     if (!vacante) return next();
 
@@ -203,4 +202,21 @@ exports.contactar = async(req, res, next) => {
     // mensaje flash y redirecciion
     req.flash('correcto', 'Se envio tu Curriculum Correctamente');
     res.redirect('/');
+}
+
+exports.mostrarCandidatos = async (req, res, next) => {
+ const vacante = await Vacante.findById(req.params.id);
+
+ if (vacante.autor != req.user._id.toString()) return next();
+
+ if (!vacante) return next(); 
+
+ res.render('candidatos', {
+     nombrePagina: `Candidatos Vacante - ${vacante.titulo}`,
+     cerrarSesion: true,
+     nombre: res.user.nombre,
+     imagen: req.user.imagen,
+     candidatos: vacante.candidatos
+ })
+ 
 }

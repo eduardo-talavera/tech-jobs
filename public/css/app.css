@@ -81,7 +81,7 @@ h3 {
 
 .btn {
     font-size: 1.8rem;
-    padding: 1.4rem 3rem;
+    padding: 1.4rem 2rem;
     border-radius: .6rem;
     color: white;
     font-weight: 700;
@@ -93,7 +93,9 @@ h3 {
 }
 
 .btn-verde {
-    background-color: #00C897;
+    /* background-color: #00C897; */
+    background: none;
+    border: 2px solid #00C897;
 }
 
 .btn-verde:hover {
@@ -101,7 +103,8 @@ h3 {
 }
 
 .btn-azul {
-    background-color: #00A4B6;
+    background: none;
+    border: 2px solid #00A4B6;
 }
 
 .btn-azul:hover {
@@ -109,11 +112,21 @@ h3 {
 }
 
 .btn-amarillo {
+    /* background-color: #F6B15F; */
+    border: 2px solid #F6B15F;
+}
+
+.btn-amarillo:hover {
     background-color: #F6B15F;
 }
 
 .btn-rojo {
-    background-color: #C80045;
+    /* background-color: #C80045; */
+    border: 2px solid #C80045;
+}
+
+.btn-rojo:hover {
+ background-color: #C80045;
 }
 
 .editar-btn {
