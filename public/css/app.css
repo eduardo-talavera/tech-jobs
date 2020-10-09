@@ -23,7 +23,7 @@ body {
 }
 
 .capa {
-    background-image: linear-gradient(to bottom right, #061922 20%, rgba(17, 14, 41, 0.8));
+    background-image: linear-gradient(to bottom right, #061922c2 20%, rgba(17, 14, 41, 0.9));
     width: 100%;
     height: 100%;
     margin: 0;
@@ -61,7 +61,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
 }
 
 .contenedor {
@@ -73,7 +73,7 @@ h3 {
     padding-bottom: 2rem;
     padding-top: 2rem;
     /* border-bottom: 1px solid #272727; */
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
 }
 
 
@@ -81,7 +81,7 @@ h3 {
 
 .btn {
     font-size: 1.8rem;
-    padding: 1.4rem 6rem;
+    padding: 1.4rem 3rem;
     border-radius: .6rem;
     color: white;
     font-weight: 700;
@@ -221,6 +221,7 @@ h3 {
     border-radius: 1rem;
     color: white;
     font-size: 1.2rem;
+    outline: none;
 }
 
 .buscador input[type="submit"] {
@@ -275,7 +276,7 @@ h3 {
 }
 
 .caja {
-    padding: .5rem 0;
+    padding: .5rem 20px;
 }
 
 .caja p {
@@ -289,8 +290,8 @@ h3 {
 .caja .puesto,
 .caja .etiqueta {
     font-weight: 700;
-    color: #616065;
-    font-size: 2.6rem;
+    color: #fbe99e;
+    font-size: 2rem;
     margin: 0;
     text-align: left;
 }
@@ -300,7 +301,7 @@ h3 {
 }
 
 .caja .nombre {
-    font-size: 2.4rem;
+    font-size: 2rem;
     margin: .5rem 0;
     text-align: left;
 }
@@ -321,7 +322,7 @@ h3 {
 }
 
 .vacante-contenedor h2 {
-    color: #616065;
+    color: #fbe99e;
     font-size: 2.4rem;
 }
 
@@ -392,6 +393,7 @@ h3 {
 .default-form .campo {
     margin-bottom: 3rem;
     display: flex;
+    justify-content: center;
 }
 
 .default-form label {
@@ -416,6 +418,7 @@ h3 {
     font-size: 1.8rem;
     border-radius: 1rem;
     border: none;
+    outline: none;
 }
 
 .default-form input[type="file"] {
@@ -549,7 +552,7 @@ p.candidatos {
 .cerrar-sesion p,
 .cerrar-sesion a {
     margin: 0 2rem 0 0;
-    color: #888;
+    color: #fbe99e;
 }
 
 .cerrar-sesion {
@@ -570,8 +573,19 @@ p.candidatos {
     margin-bottom: 5rem;
 }
 
+#particles-js {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+
 .botones a {
     margin-right: 2rem;
+}
+
+.lista-vacantes {
+    width: 82%;
 }
 
 .lista-candidatos p,
@@ -637,7 +651,7 @@ p.candidatos {
 /** Biografia Vacante **/
 
 .info-reclutador h2 {
-    color: #616065;
+    color: #fbe99e;
     font-size: 2.4rem;
 }
 
@@ -715,8 +729,14 @@ p.candidatos {
 }
 
 .img-edit-perfil {
-    border-radius: 0;
     margin-top: 10px;
     width: 100px;
     height: 100px;
 }
+
+.ti-logo {
+    width: 300px;
+}
+
+
+

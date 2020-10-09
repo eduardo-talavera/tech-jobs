@@ -1,12 +1,13 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import particlesOptions from './particlesjs-config';
 
 const nave = document.querySelector('.img-header');
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 
-
+    particlesJS(particlesOptions);
 
     window.onscroll = function() {
         // Obtenemos la posicion del scroll en pantalla

@@ -8,8 +8,8 @@ exports.mostrarTrabajos = async(req, res, next) => {
     if (!vacantes) return next();
 
     res.render('home', {
-        nombrePagina: 'Fast Jobs',
-        tagline: 'Encuentra y publica Trabajos Rapido',
+        nombrePagina: 'TI Jobs',
+        tagline: 'Publica y encuentra trabajos',
         barra: true,
         boton: true,
         nave: true,

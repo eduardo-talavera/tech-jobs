@@ -4,7 +4,8 @@ require('dotenv').config({path: 'variables.env'});
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE,{
     useUnifiedTopology: true,
-    useNewUrlParser:true 
+    useNewUrlParser:true,
+    useCreateIndex: true
 });
 
 mongoose.connection.on('error', (error) => {
