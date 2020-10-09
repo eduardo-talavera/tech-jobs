@@ -214,7 +214,7 @@ exports.mostrarCandidatos = async (req, res, next) => {
  res.render('candidatos', {
      nombrePagina: `Candidatos Vacante - ${vacante.titulo}`,
      cerrarSesion: true,
-     nombre: res.user.nombre,
+     nombre: req.user.nombre,
      imagen: req.user.imagen,
      candidatos: vacante.candidatos
  })
