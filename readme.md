@@ -48,7 +48,7 @@ se te debe mostrar algo similar.
 
 ahora debera colocar esos valores en su archivo email.js
 
-si desea utilizar su cuenta de gmail debera ir a la configuración de la misma y abilitar el acceso de aplicaciones poco seguras, el host de gmail es "smtp.gmail.com" debera colocar este junto con el usuario y contraseña con que ingresa a su cuenta.
+si desea utilizar su cuenta de gmail debera ir a la configuración de la misma y habilitar el acceso de aplicaciones poco seguras, el host de gmail es "smtp.gmail.com" debera colocar este junto con el usuario y contraseña con que ingresa a su cuenta.
 
 Ejemplo de como debe quedar el archivo:
 
