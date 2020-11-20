@@ -1,5 +1,5 @@
 {
-  "name": "jobs",
+  "name": "tech-jobs",
   "version": "1.0.0",
   "description": "Portal jobs Con Node js,  Handlebars , Mongo DB y Mongoose",
   "main": "index.js",
