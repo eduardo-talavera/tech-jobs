@@ -1,80 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/trix.css">
+    <link rel="stylesheet" href="/css/rubik.css">
+    <link rel="stylesheet" href="/css/error_404.css">
     <link rel="stylesheet" href="/css/app.css">
     <title>{{ nombrePagina }}</title>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
+
 <body>
 
-    <div id="particles-js"></div>
+    {{!-- <div id="particles-js"></div> --}}
 
-   <div class="capa">
+    {{!-- <div class="capa"></div> --}}
+    <div class="header-top">
         <div class="nombre-sitio contenedor">
-            <h1><a href="/"><img src="/img/ti-jobs-not-background.png" class="ti-logo" alt="" width="150px"></a></h1>
+            <h2><a href="/"> <img src="/img/rubiks.png" width="50px " alt=""> Tech <span>Jobs</span></a></h2>
 
             {{#if barra}}
-                <div class="buscador">
-                    <form action="#">
-                        <input type="text" class="buscar" placeholder="¿ que empleo buscas ?">
-                        <input type="submit" value="Buscar">
-                    </form>
-                </div>
+            <div class="buscador">
+                <form action="/buscador" method="POST">
+                    <div class="barra-buscar">
+                        <input type="text" class="buscar" name="q" placeholder="¿ que empleo buscas ?">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
             {{/if}}
 
             {{#if cerrarSesion}}
-                <div class="cerrar-sesion">
-                    <p>Hola! {{nombre}}</p>
-                    {{#if imagen}}
-                    <div class="img-box" 
-                        style="
+            <div class="cerrar-sesion">
+                <p>Hola! {{nombre}}</p>
+                {{#if imagen}}
+                <div class="img-box" style="
                             background-image:url(/uploads/perfiles/{{imagen}});
                         ">
-                        </div>
-                    {{/if}}
-                    <a href="/administracion">Administración</a>
-                    <a href="/cerrar-sesion">Cerrar Sesión</a>
                 </div>
+                {{/if}}
+                <a href="/administracion">Administración</a>
+                <a href="/cerrar-sesion">Cerrar Sesión</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <header class="site-header contenedor separador">
+        <div class="text-header">
+            {{!-- <div id="header"></div> --}}
+            <h2>{{nombrePagina}}</h2>
+
+            {{#if tagline}}
+            <p class="tagline">{{tagline}}</p>
+            {{/if}}
+
+            {{#if boton}}
+            <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
             {{/if}}
         </div>
 
-        <header class="site-header contenedor separador">
-                <div class="text-header">
-                    <h2>{{nombrePagina}}</h2>
+        {{#if nave}}
+        <img src="/img/rocket.png" class="img-header">
+        {{/if}}
+    </header>
 
-                    {{#if tagline}}
-                        <p class="tagline">{{tagline}}</p>
-                    {{/if}}
+    <div class="contenido-principal contenedor">
 
-                    {{#if boton}}
-                        <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
-                    {{/if}}
-                </div>
-           
-           {{#if nave}}
-                <img src="/img/rocket.png" class="img-header">
-           {{/if}}
-        </header>
-
-        <div class="contenido-principal contenedor">
-
-            {{#if mensajes}}
-                <div class="alertas">
-                    {{#mostrarAlertas mensajes}}
-                    {{/mostrarAlertas}}
-                </div>
-            {{/if}}
-            {{{body}}}
+        {{#if mensajes}}
+        <div class="alertas">
+            {{#mostrarAlertas mensajes}}
+            {{/mostrarAlertas}}
         </div>
-    </div> 
+        {{/if}}
+        {{{body}}}
+    </div>
+
+
+    {{!-- Rubik preloader section --}}
+
+    {{#if preloader}}
+        <div id="rubik">
+            <div class="rubiks-loader">
+                <div class="cube">
+                    <!-- base position -->
+                    <div class="face front piece row-top    col-left   yellow"></div>
+                    <div class="face front piece row-top    col-center green "></div>
+                    <div class="face front piece row-top    col-right  white "></div>
+                    <div class="face front piece row-center col-left   blue  "></div>
+                    <div class="face front piece row-center col-center green "></div>
+                    <div class="face front piece row-center col-right  blue  "></div>
+                    <div class="face front piece row-bottom col-left   green "></div>
+                    <div class="face front piece row-bottom col-center yellow"></div>
+                    <div class="face front piece row-bottom col-right  red   "></div>
+
+                    <!-- first step: E', equator inverted -->
+                    <div class="face down  piece row-top    col-center green "></div>
+                    <div class="face down  piece row-center col-center red   "></div>
+                    <div class="face down  piece row-bottom col-center white "></div>
+
+                    <!-- second step: M, middle -->
+                    <div class="face right piece row-center col-left   yellow"></div>
+                    <div class="face right piece row-center col-center green "></div>
+                    <div class="face right piece row-center col-right  blue  "></div>
+
+                    <!-- third step: L, left -->
+                    <div class="face up    piece row-top    col-left   yellow"></div>
+                    <div class="face up    piece row-center col-left   blue  "></div>
+                    <div class="face up    piece row-bottom col-left   green "></div>
+
+                    <!-- fourth step: D, down -->
+                    <div class="face left  piece row-bottom col-left   green "></div>
+                    <div class="face left  piece row-bottom col-center yellow"></div>
+                    <div class="face left  piece row-bottom col-right  red   "></div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+
     <script src="/dist/bundle.js"></script>
     <script src="/js/trix.js"></script>
     <script src="https://kit.fontawesome.com/dad2dd254f.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

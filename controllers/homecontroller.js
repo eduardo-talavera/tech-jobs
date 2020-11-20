@@ -7,12 +7,14 @@ exports.mostrarTrabajos = async(req, res, next) => {
 
     if (!vacantes) return next();
 
+
     res.render('home', {
-        nombrePagina: 'TI Jobs',
+        nombrePagina: 'Tech Jobs',
         tagline: 'Publica y encuentra trabajos',
         barra: true,
         boton: true,
-        nave: true,
+        nave: false,
+        preloader: true,
         vacantes,
     });
 }

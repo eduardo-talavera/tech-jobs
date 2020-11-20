@@ -26,7 +26,7 @@ const options = {
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 1,
       "random": false,
       "anim": {
         "enable": false,
@@ -49,7 +49,7 @@ const options = {
       "enable": true,
       "distance": 150,
       "color": "#ffffff",
-      "opacity": 0.4,
+      "opacity": 1,
       "width": 1
     },
     "move": {

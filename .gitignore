@@ -2,6 +2,6 @@ node_modules
 variables.env
 uploads/perfiles/*
 /uploads/cv/
-
+/config/email.js
 /public/uploads/cv/*
 /public/uploads/perfiles/*

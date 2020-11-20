@@ -7,7 +7,19 @@ const nave = document.querySelector('.img-header');
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    particlesJS(particlesOptions);
+    // particlesJS(particlesOptions);
+
+    const rubikPreloader = document.getElementById('rubik');
+
+    if (rubikPreloader) {
+        setTimeout(() => {
+            rubikPreloader.classList.add('rubik_hidden');
+        }, 500);
+
+        setTimeout(() => {
+            rubikPreloader.style.display = 'none';
+        }, 1000);
+    }
 
     window.onscroll = function() {
         // Obtenemos la posicion del scroll en pantalla
@@ -43,6 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (vacantesListado) {
         vacantesListado.addEventListener('click', accionesListado);
     }
+
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
 });
 
 const skills = new Set(); // Set no agrega elementos repetidos al array

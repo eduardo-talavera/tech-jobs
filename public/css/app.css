@@ -10,27 +10,22 @@ html {
 }
 
 body {
-    background-image: url('../img/universe.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    /* font-family: 'Rubik', sans-serif; */
-    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     margin: 0;
-    display: flex;
-    justify-content: center;
+   
 }
 
-.capa {
-    background-image: linear-gradient(to bottom right, #061922c2 20%, rgba(17, 14, 41, 0.9));
+/* .capa {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
     margin: 0;
-}
+} */
 
 main.contenedor {
-    background-color: #100E17;
     opacity: .96;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -46,7 +41,7 @@ p {
 h1,
 h2,
 h3 {
-    color: #ffffff;
+    color: #757b83;
     margin: 0;
 }
 
@@ -93,40 +88,38 @@ h3 {
 }
 
 .btn-verde {
-    /* background-color: #00C897; */
-    background: none;
-    border: 2px solid #00C897;
+    background-color:#00C897;
 }
 
 .btn-verde:hover {
-    background-color: rgb(10, 155, 119);
+    background-color: #0b9c78;
 }
 
 .btn-azul {
-    background: none;
-    border: 2px solid #00A4B6;
+    /* background: none;
+    border: 2px solid #00A4B6; */
+    background-color: #00A4B6;
 }
 
 .btn-azul:hover {
     background-color: rgb(3, 133, 148);
 }
 
-.btn-amarillo {
-    /* background-color: #F6B15F; */
-    border: 2px solid #F6B15F;
+.btn-blue-gray {
+    background-color: #97a8bd;
+    color: black;
 }
 
-.btn-amarillo:hover {
-    background-color: #F6B15F;
+.btn-blue-gray:hover {
+    background-color: #626c79;;
 }
 
 .btn-rojo {
-    /* background-color: #C80045; */
-    border: 2px solid #C80045;
+    background-color: #C80045;
 }
 
 .btn-rojo:hover {
- background-color: #C80045;
+ background-color: #7c042e;
 }
 
 .editar-btn {
@@ -144,8 +137,12 @@ h3 {
 
 .tagline {
     font-size: 2.2rem;
-    color: #ffffff;
+    color: #7c8b9e;
     margin: 2rem 0 3rem 0;
+}
+
+#header {
+    padding-top: 30px;
 }
 
 .site-header {
@@ -164,7 +161,7 @@ h3 {
 }
 
 .site-header .img-header {
-    width: 300px;
+    width: 200px;
     margin-right: 20%;
     cursor: pointer;
 }
@@ -196,6 +193,12 @@ h3 {
     }
 }
 
+.header-top {
+    /* background: lightgoldenrodyellow; */
+    width: 100%;
+    padding-bottom: 20px;
+}
+
 .nombre-sitio {
     display: flex;
     justify-content: space-between;
@@ -203,8 +206,13 @@ h3 {
 }
 
 .nombre-sitio a {
-    color: white;
+    color: #551A8b;
     text-decoration: none;
+}
+
+.nombre-sitio a span {
+    font-family: monospace;
+    color: #97a8bd;
 }
 
 .buscador {
@@ -232,7 +240,7 @@ h3 {
     padding: .5rem 4rem .5rem 2rem;
     height: 5rem;
     border-radius: 1rem;
-    color: white;
+    color:#757b83;
     font-size: 1.2rem;
     outline: none;
 }
@@ -245,7 +253,6 @@ h3 {
     position: absolute;
     right: 10px;
     top: 10px;
-    background-image: url(../img/lupa.png);
     background-color: transparent;
     border: none;
     background-size: 20px;
@@ -259,8 +266,23 @@ h3 {
 
 .buscar::placeholder,
 .buscar{
-    color: white;
-    font-size: 15px!important;
+    color: #757b83;
+    font-size: 20px!important;
+}
+
+.buscador  .barra-buscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    border: 2px solid #757b83;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.buscador  .barra-buscar i{
+    color:#757b83;
+    cursor: pointer;
 }
 
 @media (min-width:768px) {
@@ -279,7 +301,6 @@ h3 {
 .candidato,
 .vacante {
     padding: 3rem 0;
-    /* border-bottom: 1px solid #272727; */
     border-bottom: 1px solid white;
 }
 
@@ -292,9 +313,6 @@ h3 {
     padding: .5rem 20px;
 }
 
-.caja p {
-    color: #ffffff;
-}
 
 .contrato {
     text-transform: capitalize;
@@ -303,7 +321,7 @@ h3 {
 .caja .puesto,
 .caja .etiqueta {
     font-weight: 700;
-    color: #fbe99e;
+    color: #7c8b9e;
     font-size: 2rem;
     margin: 0;
     text-align: left;
@@ -311,12 +329,16 @@ h3 {
 
 .caja .etiqueta {
     margin: 1rem 0 0 0;
+    color: #757b83;
 }
+
+
 
 .caja .nombre {
     font-size: 2rem;
     margin: .5rem 0;
     text-align: left;
+    color:#7c8b9e;
 }
 
 .caja .btn {
@@ -335,7 +357,7 @@ h3 {
 }
 
 .vacante-contenedor h2 {
-    color: #fbe99e;
+    color:#757b83;
     font-size: 2.4rem;
 }
 
@@ -362,12 +384,12 @@ h3 {
 }
 
 .vacante-descripcion * {
-    color: white!important;
+    color:#757b83;
     line-height: 2.2;
 }
 
 .skills {
-    color: white;
+    color:#757b83;
 }
 
 .skills li,
@@ -378,15 +400,13 @@ h3 {
 
 .enviar-datos h2 {
     font-size: 4rem;
-    color: white;
+     color:#757b83;
 }
 
 .enviar-datos p {
-    color: white;
+     color:#7c8b9e;
     font-size: 1.8rem;
 }
-
-.enviar-datos form {}
 
 
 /** Iniciar Sesión **/
@@ -397,7 +417,6 @@ h3 {
 }
 
 .default-form h3 {
-    color: #616065;
     font-size: 2.4rem;
     margin-bottom: 3rem;
     text-transform: uppercase;
@@ -413,7 +432,7 @@ h3 {
     padding-top: 1rem;
     flex: 0 0 18rem;
     font-size: 1.8rem;
-    color: white;
+    color:#757b83;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -430,12 +449,13 @@ h3 {
     padding: 1rem;
     font-size: 1.8rem;
     border-radius: 1rem;
-    border: none;
+    border: 2px solid #757b83;
+    /* border-radius: 15px; */
     outline: none;
 }
 
 .default-form input[type="file"] {
-    color: white;
+    border: none;
 }
 
 trix-toolbar,
@@ -485,12 +505,14 @@ trix-toolbar .trix-button--icon-strike {
 
 .default-form .acciones {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .default-form a {
     color: #616065;
     text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
 }
 
 .lista-conocimientos {
@@ -506,7 +528,7 @@ trix-toolbar .trix-button--icon-strike {
     margin-bottom: 2rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: white;
+    color: #00C897;
     flex: 0 0 calc( 50% - 1rem);
     text-align: center;
     border-radius: 1rem;
@@ -518,6 +540,7 @@ trix-toolbar .trix-button--icon-strike {
 
 .lista-conocimientos li.activo {
     background-color: #00C897;
+    color: white;
 }
 
 .lista-conocimientos li:hover {
@@ -547,13 +570,12 @@ trix-toolbar .trix-button--icon-strike {
 
 p.candidatos {
     font-weight: 400;
-    color: white;
     display: block;
     font-size: 1.8rem;
     margin: 1rem 0 0 0;
     text-align: left!important;
     text-decoration: none;
-    color: #616065;
+    color: #757b83;
 }
 
 .admin-perfil {
@@ -565,12 +587,13 @@ p.candidatos {
 .cerrar-sesion p,
 .cerrar-sesion a {
     margin: 0 2rem 0 0;
-    color: #fbe99e;
+    color: #757b83;
+    font-size: 17px;
 }
 
 .cerrar-sesion {
     margin-top: 2rem;
-    color: white;
+    color: #757b83;
     display: flex;
 }
 
@@ -590,7 +613,7 @@ p.candidatos {
     height: 100vh;
     width: 100%;
     position: fixed;
-    z-index: -1;
+    z-index: -2;
   }
 
 .botones a {
@@ -601,7 +624,7 @@ p.candidatos {
 
 .lista-candidatos p,
 .lista-vacantes p {
-    color: white;
+    color: #97a8bd;
     text-align: center;
 }
 
@@ -662,7 +685,6 @@ p.candidatos {
 /** Biografia Vacante **/
 
 .info-reclutador h2 {
-    color: #fbe99e;
     font-size: 2.4rem;
 }
 
@@ -672,8 +694,7 @@ p.candidatos {
 }
 
 .datos-reclutador {
-    /* border-top: 3px solid #272727; */
-    border-top: 3px solid white;
+    border-top: 3px solid #97a8bd;
     padding: 5rem 0;
     display: flex;
     justify-content: space-between;
@@ -682,7 +703,7 @@ p.candidatos {
 
 .datos-reclutador p {
     font-size: 2.4rem;
-    color: white;
+    color: #7c8b9e;
 }
 
 @media (min-width:768px) {
@@ -696,11 +717,10 @@ p.candidatos {
 
 .enviar-datos h2 {
     font-size: 4rem;
-    color: white;
 }
 
 .enviar-datos p {
-    color: white;
+    color: #7c8b9e;
     font-size: 1.8rem;
 }
 
@@ -713,7 +733,22 @@ p.candidatos {
 }
 
 .auth-sociales i {
-    font-size: 30px;
+    font-size: 40px;
+}
+
+.fa-linkedin {
+    color: #0073b1;
+}
+
+.fa-google {
+    color: green;
+}
+
+
+
+.campo .title-sociales {
+    font-size: 20px;
+    color: gray;
 }
 
 .btn-more-info i {
@@ -748,6 +783,28 @@ p.candidatos {
 .ti-logo {
     width: 300px;
 }
+
+/* 
+ Error messages */
+
+ .content-error{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: -25%;
+     /* height: 100vh; */
+ }
+
+ .content-error .error_code {
+     color: #757b83;
+     font-size: 200px;
+ }
+
+ .content-error p {
+    color:#757b83;
+    font-size: 25px;
+ }
 
 
 

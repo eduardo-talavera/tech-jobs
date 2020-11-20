@@ -53,7 +53,7 @@ const upload = multer(configuracionMulter).single('imagen');
 
 exports.formCrearCuenta = (req, res) => {
     res.render('crear-cuenta', {
-        nombrePagina: 'Crea tu cuenta en Jobs',
+        nombrePagina: 'Crea tu cuenta en Tech Jobs',
         tagline: 'Publica tus Vacantes Solo debes crear una cuenta'
     })
 }
@@ -83,7 +83,7 @@ exports.validarRegistro = (req, res, next) => {
         req.flash('error', errores.map(error => error.msg));
 
         res.render('crear-cuenta', {
-            nombrePagina: 'Crea tu cuenta en jobs',
+            nombrePagina: 'Crea tu cuenta en Tech Jobs',
             tagline: 'Comienza a publicar tus vacantes gratis solo debes crear una cuenta',
             mensajes: req.flash(),
         });
