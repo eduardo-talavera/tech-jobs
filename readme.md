@@ -5,15 +5,15 @@
 - Mongo >= 4.2.2
 
 
-## Configuración 📦
-- Clonar el repositorio
-- Instalar las dependencias con `npm install`
-- Crear el archivo con las variables de entorno en la raíz del proyecto y nombrarlo como "variables.env"
+## Instrucciones 📦
+- Clone o descargue el repositorio
+- Instale las dependencias ejecutando el comando `npm install` estando dentro del proyecto en una terminal.
+- Crear un archivo en la raiz del proyecto y nombrarlo "variables.env"
 - crear un archivo dentro de la carpeta config y nombrarlo "email.js"
 
 ## Ejecución 🧪
 - Desarrollo: `npm run dev`
-- Producción: `npm run start`
+- Producción: `npm start`
 
 
 ## Archivo variables.env
@@ -37,12 +37,12 @@ Ejemplo:
 ## Archivo email.js
 El archivo debe exportar un objeto con las claves y valores necesarios para el envio de emails
 <br>
-necesitaras contar con un cliente de correo si no cuentas con uno puedes obtener uno de pruebas en la pagina de <a href="https://mailtrap.io/" target="_blank">mailtrap<a/> una vez que te hallas registrado e iniciado sesión dezplazate a la seccion imboxes y despues da click en el engrane como se muestra en la imagen acontinuación. <br/>
+necesitara contar con un cliente de correo si no cuenta con uno puede obtener uno de pruebas en la pagina de <a href="https://mailtrap.io/" target="_blank">mailtrap<a/> una vez que se halla registrado e iniciado sesión valla a la seccion imboxes y despues de click en el engrane como se muestra en la imagen a continuación. <br/>
 
 <img src="https://raw.githubusercontent.com/eduardo-talavera/tech-jobs/master/public/img/mail-trap-panel.png" width="100%" > <br/>
 
-Despues pulsa en mostrar credenciales en la pestaña de configuración de smtp,
-se te debe mostrar algo similar.
+Despues pulse en mostrar credenciales en la pestaña de configuración de smtp,
+se le debe mostrar algo similar.
 
 <img src="https://raw.githubusercontent.com/eduardo-talavera/tech-jobs/master/public/img/panel-credentials.png" width="100%" > <br/>
 
@@ -54,8 +54,8 @@ Ejemplo de como debe quedar el archivo:
 
 ```js
 module.exports = {
-  user: '<tu usuario>',
-  pass: '<tu contraseña>',
+  user: '<su usuario>',
+  pass: '<su contraseña>',
   host: 'smtp.mailtrap.io',//tomamos el host de mailtrap como ejemplo
   port: '2525',
 }
