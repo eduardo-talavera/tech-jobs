@@ -190,7 +190,7 @@ exports.contactar = async(req, res, next) => {
 
     // todo bien construir en nuevo objeto
     const nuevoCandidato = {
-        nombre: req.body.email,
+        nombre: req.body.nombre,
         email: req.body.email,
         cv: req.file.filename
     }

@@ -8,7 +8,7 @@
     "start": "concurrently \"npm run dev\" \"npm run watch\" ",
     "watch": "webpack --w --mode development"
   },
-  "author": "Edgar Eduardo Talavera Contreras",
+  "author": "Eduardo Talavera",
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
