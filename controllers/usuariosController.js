@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Usuarios = mongoose.model('Usuarios');
 const multer = require('multer');
 const shortid = require('shortid');
+const fs = require('fs');
 
 
 exports.subirImagen = (req, res, next) => {
@@ -129,6 +130,17 @@ exports.formEditarPerfil = (req, res) => {
     })
 }
 
+const deleteImage = (imageName) => {
+    const imgProductoPath = __dirname + `../../public/uploads/perfiles/${imageName}`;
+    // eliminar archivo con filesystem
+    fs.unlink(imgProductoPath, (error) => {
+      if (error) {
+        console.log(error);
+      }
+      return;
+    });
+  };
+
 // Guardar Cambios editar perfil
 exports.editarPerfil = async (req, res) => {
     const usuario = await Usuarios.findById(req.user._id);
@@ -138,9 +150,10 @@ exports.editarPerfil = async (req, res) => {
     if (req.body.password) {
         usuario.password = req.body.password;
     }
-    console.log('editando ...');
-    console.log(req.file);
+    // console.log('editando ...');
+    // console.log(req.file);
     if (req.file) {
+        deleteImage(usuario.imagen);
         usuario.imagen = req.file.filename;
     }
 
